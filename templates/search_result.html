@@ -1,0 +1,56 @@
+{% extends "main_template.html" %}
+
+{% block title %}
+GoodReads Premium
+{% endblock %}
+
+{% block body %}
+<div class="container" id="index-container">
+	<div class="row d-flex justify-content-center">
+		<div class="col-xl-12">
+			<h1 id="return-result-heading">
+				<span style="font-weight: 600; font-family: 'Cabin', sans-serif;">{{ result_length }}</span>
+				QUERY RESULT(S) WITH KEYWORD </br>
+				<a style="font-weight: 800; font-family: 'Cabin', sans-serif;">"{{ keyword }}"</a></h1>
+			<form class='search-form' action="{{ url_for('search_result') }}" method="post">
+				<div id="search-bar" , style="margin-top: 4vh;">
+					<button type="submit" class="btn btn-primary" id="search-button">START QUERY</button>
+					<div style="overflow: hidden; margin-right: 150px;">
+						<input type="text" name="search-text" class="form-control"
+							placeholder="Enter ISBN, Book Name, or Author" required>
+					</div>
+				</div>
+			</form>
+		</div>
+		{% if result_length != 0 %}
+		<table class="table table-hover table-responsive-xl" id="result-table">
+			<thead class="table-head">
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">TITLE</th>
+					<th scope="col">AUTHOR</th>
+					<th scope="col">ISBN</th>
+					<th scope="col" class="center-item">YEAR</th>
+					<th scope="col" class="center-item">LINK</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for row in result %}
+				<tr>
+					<td>{{row[0]}}</td>
+					<td>{{row[2]}}</td>
+					<td>{{row[3]}}</td>
+					<td>{{row[1]}}</td>
+					<td class="center-item">{{row[4]}}</td>
+					<td class="center-item" class="detail-button">
+						<a href="{{ url_for('detail', isbn = row[1])}}" type="button" class="btn btn-outline-info">Book
+							Detail</a></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		{% endif %}
+		<p class="end-of-result"> &#8212; end of results &#8212;</p>
+	</div>
+</div>
+{% endblock %}

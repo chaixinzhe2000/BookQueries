@@ -1,0 +1,125 @@
+{% extends "main_template.html" %}
+
+{% block title %}
+GoodReads Premium
+{% endblock %}
+
+{% block body %}
+<div class="container" id="index-container">
+	<div class="row d-flex justify-content-center">
+		<div class="col-xl-12">
+			<h1 id="book-detail-heading">
+				<span style="font-weight: 400; font-size: 2rem;">BOOK DETAIL:</span> </br>
+				{{book_info[2].upper()}}
+			</h1>
+			<p id="author-line"><span style="font-style: italic; font-weight: 400;">by</span> {{ book_info[3] }}</p>
+		</div>
+		<div class="col-xl-6">
+			<img id="book-cover" src="http://covers.openlibrary.org/b/ISBN/{{book_info[1]}}-L.jpg" alt="Book Cover">
+			<span id="info-area">
+				<p style="margin-top: -10px;">
+					<strong>Published in: </strong>{{book_info[4]}}
+				</p>
+				<p class="book-detailed-info">
+					<b>Language: </b>English
+				</p>
+				<p class="book-detailed-info">
+					<b>ISBN-10: </b>{{ isbn }}
+				</p>
+				<p class="book-detailed-info">
+					<b>ISBN-13: </b>{{ isbn_13 }}
+				</p>
+				<p class="book-detailed-info">
+					<b>Editor's Rating: </b>
+					<span id="rating-stars">
+						{% for i in range(black_star) %}
+						&#9733;
+						{% endfor %}
+						{% for i in range(white_star) %}
+						&#9734;
+						{% endfor %}
+					</span>
+				</p>
+				<p class="book-detailed-info">
+					<b>Number of Reviews: </b>{{ reviews_count }}
+				</p>
+				<p class="book-detailed-info">
+					<b>Author's Bio:</b><a href="{{ author_link }}"> Open Library</a>
+				</p>
+			</span>
+		</div>
+		<div class="col-xl-6">
+			<div id="publisher">
+				<p>
+					PUBLISHER: </br>
+				<p class="publisher-data">{{publisher.upper()}}</p>
+				</p>
+				<p style="margin-top: -15px;">
+					RATING: </br>
+				<p class="publisher-data">{{average_rating}}/5.00</p>
+				</p>
+			</div>
+		</div>
+		<div class="col-xl-12">
+			<h1 id="sub-comment-heading">
+				<span style="font-weight: 800; font-size: 2rem; margin-bottom: 15px;">
+					COMMUNITY'S OPINION™</Canvas></span> </br>
+			</h1>
+			<p id="fine-print">All reviews are done by real-readers in the GoodReads Community</p>
+			<ul class="list-group list-group-flush">
+				{% for row in comments %}
+				<div>
+					<img class="thumbnail-favicon" src="https://picsum.photos/50?random={{range(1, 10000) | random}}"
+						alt="random icon">
+					<span style="font-family: 'Crimson Pro', serif; ">
+						<p style="margin-top: -8px; font-size: 1.6rem; font-weight: 700;">{{row[2]}}</p>
+						<p style="margin-top: -26px; font-size: 1.4rem; font-weight: 400;">
+							Rating:
+							<span style="letter-spacing: -2px; margin-top: 5px;">
+								{% for i in range(row[0]) %}
+								&#9733;
+								{% endfor %}
+								{% for i in range(5-row[0]) %}
+								&#9734;
+								{% endfor %}
+							</span>
+						</p>
+					</span>
+					<p id="comment-block">
+						{{row[1]}}
+					</p>
+					</br>
+				</div>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="col-xl-12">
+			<h1 id="sub-comment-heading" style="margin-top: 2vh;">
+				<span style="font-weight: 800; font-size: 2rem; margin-bottom: 15px;">WRITE A
+					REVIEW</span> </br>
+			</h1>
+			<p id="fine-print">Your contribution is vital to our reader community.</p>
+			<form id="comment-form" action="{{ url_for('.detail', isbn=book_info[1]) }}" method="post">
+				<div>
+					<span>My Rating:&nbsp;&nbsp;</span>
+					<div class="input-group" id="rating-stripe">
+						<input type="number" min="0" max="5" name="review-rating" class="form-control" placeholder="0-5"
+							aria-label="user-rating" required>
+						<div class="input-group-append">
+							<span class="input-group-text" id="basic-addon2">out of 5</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="exampleFormControl">What did you think of the book?</label>
+					<textarea style="margin-top: 2px" class="form-control" name="review-comment" id="exampleFormControl"
+						rows="4" required placeholder="It was a facsinating read..."></textarea>
+				</div>
+				<button style="float: left;" type="submit" class="btn btn-primary" id="search-button">SUBMIT
+					COMMENT</button>
+			</form>
+		</div>
+		<p class="end-of-result"> &#8212; end of page &#8212;</p>
+	</div>
+</div>
+{% endblock %}

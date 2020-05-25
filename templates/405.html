@@ -1,0 +1,24 @@
+{% extends "main_template.html" %}
+
+{% block title %}
+GoodReads Premium - 404 Page Not Found
+{% endblock %}
+
+{% block body %}
+<div class="container" id="index-container">
+	<div class="row d-flex justify-content-center">
+		<div class="col-xl-12">
+			<h1 id="index-heading" style="font-weight: 800; font-size: 60px; margin-top: 17vh;">OOPSIE DAISY,</br>
+				<a style="font-weight: 400">SORRY, YOUR ACCESS IS DENIED</a></h1>
+			<p style="font-family: 'Cabin', sans-serif; font-size: 23px; margin-top: 30px;">
+				We apologize for any inconvinience we brought to you. The page you tried to visit requires login information. </br>
+				To access our database, please click this <a href="{{ url_for('index') }}">link</a> to register or sign in.
+			</p>
+
+			<p style="font-family: 'Courier New', Courier, monospace; font-size: 17px; margin-bottom: 20vh; margin-top: 10px; font-weight: 700;">
+				ERROR CODE: 405 ACCESS DENIED
+			</p>
+		</div>
+	</div>
+</div>
+{% endblock %}

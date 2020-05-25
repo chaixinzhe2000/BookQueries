@@ -1,0 +1,39 @@
+{% extends "main_template.html" %}
+
+{% block title %}
+GoodReads Premium
+{% endblock %}
+
+{% block body %}
+<div class="container" id="index-container">
+	<div class="row d-flex justify-content-center">
+		<div class="col-xl-6" style="text-align: center;">
+			<img src="/static/images/index_people.png" class="img-fluid" id="index-image" alt="Responsive image">
+		</div>
+		<div class="col-xl-6">
+			<h1 id="index-heading">MEET YOUR NEXT <a style="font-weight: 800;">FAVOURITE </a>BOOK</h1>
+			<form id='index-form' action="{{ url_for('login_register') }}" method="post">
+				<div class="form-group">
+					<label for="exampleInputEmail1">Full Name</label>
+					<input type="text" name="full_name" class="form-control" placeholder="Full Name (case insensitive)" required>
+					<small id="emailHelp" class="form-text text-muted">For display purposes only, your data is safe with us. </small>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputEmail1">User Name</label>
+					<input type="text" name="username" class="form-control" placeholder="Username (case sensitive)" required>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword1">Password</label>
+					<input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password (0-10 characters)" required>
+				</div>
+				<div class="form-group form-check">
+					<input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+					<label class="form-check-label" for="exampleCheck1">I have read and agree to the <a
+							href="https://policies.google.com/privacy?hl=en-US">Privacy Policy</a></label>
+				</div>
+				<button type="submit" class="btn btn-primary">Register / Log in</button>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

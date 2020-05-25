@@ -1,0 +1,428 @@
+$dark-accent: #388087;
+$second-dark-accent: #6FB3B8;
+$background: #F6F6F2;
+$pale-green: #C2EDCE;
+$light-blue: #BADFE7;
+
+:root {
+	font-size: 16px;
+}
+
+.body {
+	background-color: $background;
+}
+
+.navbar-light .navbar-brand {
+	color: $dark-accent;
+	font-family: 'Cabin', sans-serif;
+	font-weight: 800;
+	font-size: 22px;
+	margin-right: 50px;
+	margin-left: 10px
+}
+
+.navbar-light .navbar-brand:hover {
+	color: $second-dark-accent;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	font-family: 'Josefin Sans', sans-serif;
+	color: $dark-accent;
+	margin-right: 15px;
+	margin-top: 5px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+	color: $second-dark-accent;
+}
+
+.navbar-light .navbar-nav .active>.nav-link {
+	color: $dark-accent;
+	font-weight: 700;
+}
+
+.navbar-light .navbar-nav .active>.nav-link:hover {
+	color: $second-dark-accent;
+	font-weight: 700;
+}
+
+#header-suffix {
+	font-family: 'Cabin', sans-serif;
+	font-weight: 400;
+}
+
+.navbar-light .navbar-text {
+	font-family: 'Crimson Pro', serif;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+#index-image {
+	width: 70%;
+	margin-top: 8vh;
+}
+
+#index-form {
+	margin-top: 20px;
+	margin-bottom: 8vh;
+	font-family: 'Raleway', sans-serif;
+}
+
+#index-heading {
+	margin-top: 13vh;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 400;
+	font-size: 3.5rem;	
+}
+
+#welcome-form {
+	margin-top: 20px;
+	margin-bottom: 8vh;
+	font-family: 'Raleway', sans-serif;
+}
+
+#welcome-image {
+	width: 100%;
+	margin-top: 20vh;
+	margin-left: -50px;
+}
+
+@media (max-width: 720px) {
+	#index-image {
+		display: none;
+	}
+
+	#optional {
+		display: none;
+	}
+
+	#welcome-image {
+		display: none;
+	}
+}
+
+@media (max-width: 1200px) {
+	#index-form {
+		margin-top: 20px;
+		margin-bottom: 20vh;
+	}
+
+	#index-heading {
+		margin-top: 7vh;
+		font-family: 'Josefin Sans', sans-serif;
+		font-weight: 400;
+		font-size: 3.5rem;	
+	}
+
+	#welcome-image {
+		width: 100%;
+		margin-left: 10px;
+		margin-top: 10vh;
+		margin-bottom: 40px;
+	}
+
+	#welcome-form {
+		margin-top: 0px;
+		margin-bottom: 20vh;
+	}
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	height: 50px;
+	width: 100%;
+	background-color: $dark-accent;
+	color: $background;
+	text-align: left;
+	padding-top: 12px;
+	padding-left: 25px;
+	font-family: 'Crimson Pro', serif;
+	font-size: 18px;
+}
+
+.btn-primary {
+	color: #fff;
+    background-color: $dark-accent;
+    border-color: $dark-accent;
+}
+
+.btn-primary:hover {
+	color: #fff;
+    background-color: $second-dark-accent;
+    border-color: $second-dark-accent;
+}
+
+.btn-primary:focus {
+	color: #fff;
+    background-color: $dark-accent;
+    border-color: $dark-accent;
+}
+
+input[type=email] {
+	background-color: white;
+	background-image: url("/static/images/message.png");
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	padding-left: 40px;
+}
+
+input[type=password] {
+	background-color: white;
+	background-image: url("/static/images/hashtag.png");
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	padding-left: 40px;
+}
+
+input[type=text] {
+	background-color: white;
+	background-image: url("/static/images/message.png");
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	padding-left: 40px;
+}
+
+#footer-link {
+	color: #F6F6F2; 
+	text-decoration: underline;
+}
+
+#footer-link:hover {
+	color: $pale-green; 
+	text-decoration: underline;
+}
+
+#finish-button {
+	margin-top: 10px;
+}
+
+#search-bar input::placeholder {
+	color: white;
+}
+
+#search-bar{
+	margin-top: 30px;
+	padding: 16px;
+	background: $dark-accent;
+  	box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.1), 0 0 30px $second-dark-accent;
+}
+
+#search-bar input[type=text] {
+	color: white;
+    background-color: $dark-accent;
+	background-image: url(/static/images/search.png);
+	background-size: 20px;
+    background-position: 7px 12px;
+    background-repeat: no-repeat;
+	padding-left: 40px;
+}
+
+#search-bar .form-control {
+    display: block;
+    width: 100%;
+	padding: .375rem 1rem;
+	font-family: 'Cabin', sans-serif;
+    font-size: 1.3em;
+	line-height: 1.5;
+	background-color: $dark-accent;
+    background-clip: padding-box;
+    border: 1px solid $dark-accent;
+    border-radius: .25rem;
+	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+#search-bar .form-control:focus {
+    border-color: $dark-accent;
+  	box-shadow: inset 0 1px 1px $dark-accent, 0 0 8px $dark-accent;
+}
+
+#search-button {
+	font-family: 'Josefin Sans', sans-serif;
+	margin-top: 2px;
+	padding-top: 10px;
+	float: right;
+}
+
+#return-result-heading {
+	margin-top: 7vh;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 400;
+	font-size: 2.5rem;	
+}
+
+#result-table {
+	margin-top: 7vh;
+	
+	table-layout: auto;
+	width: 95%;
+	font-family: 'Crimson Pro', serif;
+	font-size: 1.4rem;
+}
+
+.table th {
+	font-family: 'Josefin Sans', sans-serif;
+	padding-top: 20px;
+}
+
+.table td {
+	vertical-align: middle;
+  }
+
+.end-of-result {
+	margin-top: 8vh;
+	font-family: 'Sacramento', cursive;
+	margin-bottom: 20vh;
+	font-size: 2.2rem;
+}
+
+.center-item {
+	text-align: center;
+}
+
+.btn-outline-info{
+	color: $dark-accent;
+    background-color: transparent;
+    background-image: none;
+	border-color: $dark-accent;
+	font-size: 1.1rem;
+}
+
+.btn-outline-info:hover {
+    color: #fff;
+    background-color: $dark-accent;
+    border-color: $dark-accent;
+}
+
+#book-detail-heading {
+	margin-top: 8vh;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 780;
+	font-size: 3rem;	
+}
+
+#author-line {
+	margin-top: -1.5vh;
+	font-weight: 800; 
+	font-family: 'Crimson Pro', serif;
+	font-size: 1.5rem;
+	margin-bottom: 4vh;
+}
+
+#book-cover {
+	height: 23vh;
+	margin-bottom: 2vh;
+	@media (min-width: 576px) {
+		float: left;
+		margin-right: 2vh;
+	}
+}
+
+#info-area {
+	font-size: 1.5rem;
+	font-family: 'Crimson Pro', serif;
+}
+
+#rating-stars {
+	letter-spacing: -2px
+}
+
+.book-detailed-info {
+	margin-top: -20px;
+}
+
+#publisher {
+	float: right;
+	margin: -10px;
+	font-weight: 700;
+	font-size: 2rem;
+	font-family: 'Crimson Pro', serif;
+}
+
+#ratings {
+	margin: -10px;
+	font-weight: 700;
+	font-size: 2rem;
+}
+
+.publisher-data {
+	margin-top: -24px;
+	font-weight: 400;
+	font-size: 1.8rem; 
+	font-family: 'Crimson Pro', serif;
+}
+
+@media (max-width: 1200px) {
+	#publisher {
+		display: none;
+	}
+}
+
+
+textarea#exampleFormControl.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #ffffff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+#comment-form {
+	font-family: 'Crimson Pro', serif;
+	font-size: 1.3rem;
+	font-weight: 500;
+}
+
+#rating-stripe {
+	margin-top: 10px;
+	margin-bottom: 15px;
+	width: 15%;
+}
+
+#sub-comment-heading {
+	margin-top: 4vh;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 800;
+	font-size: 3rem;	
+}
+
+.thumbnail-favicon {
+	border-radius: 10px;
+	float: left;
+	clear: both;
+	margin-right: 20px;
+}
+
+#fine-print {
+	font-family: 'Crimson Pro', serif;
+	font-weight: 400;
+	margin-top: -19px;
+	margin-bottom: 3vh;
+	font-size: 1.3rem;
+	color:grey
+}
+
+#comment-block {
+	margin-top: -10px;
+	margin-bottom: 15px;
+	font-family: 'Crimson Pro', serif;
+	font-weight: 400;
+	font-size: 1.25rem;
+}
+
+#search-explain {
+	margin-top: 3vh;
+	font-family: 'Crimson Pro', serif;
+	font-weight: 400;
+	font-size: 1.25rem;
+	color: grey;
+}

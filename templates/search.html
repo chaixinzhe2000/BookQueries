@@ -1,0 +1,25 @@
+{% extends "main_template.html" %}
+
+{% block title %}
+GoodReads Premium
+{% endblock %}
+
+{% block body %}
+<div class="container" id="index-container">
+	<div class="row d-flex justify-content-center">
+		<div class="col-xl-12">
+			<h1 id="index-heading" style="margin-top: 17vh;">QUERY THE WORLD'S </br> <a style="font-weight: 800;">LARGEST BOOK DATABASE</a></h1>
+			<form class='search-form' action="{{ url_for('search_result') }}" method="post">
+				<div id="search-bar">
+					<button type="submit" class="btn btn-primary" id="search-button">START QUERY</button>
+					<div style="overflow: hidden; margin-right: 150px;">
+						<input type="text" name="search-text" class="form-control"
+							placeholder="Enter ISBN, Book Name, or Author" required>
+					</div>
+				</div>
+			</form>
+			<p id="search-explain">Search result based on our database, book information is extracted from GoodReads and OpenLibrary API.</p>
+		</div>
+	</div>
+</div>
+{% endblock %}
