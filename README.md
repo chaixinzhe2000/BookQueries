@@ -1,6 +1,7 @@
 # Project 1
 
 Web Programming with Python and JavaScript
+
 This is a user-friendly book database, where users can access information for the book and comment on it after they read it.
 The main flask file is the application.py, where it acts as a hub to the pages of the website. In templates, there are multiple
 html files that inherites from main_template.html. 404.html and 405.html are error pages, and book_detail.html dynamically 
