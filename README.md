@@ -1,4 +1,4 @@
-# Project 1
+# GoodReads Premium
 
 This is a user-friendly book database, where users can access information for the book and comment on it after they read it.
 The main flask file is the `application.py`, where it acts as a hub to the pages of the website. In templates, there are multiple
